@@ -1,0 +1,37 @@
+# 仿真器配置文件
+world:
+  # 海域尺寸（单位：米）
+  width: 10000
+  height: 10000
+  max_depth: 500
+
+  # 区域定义
+  zones:
+    - name: 敏感区A
+      type: restricted
+      polygon: [[2000, 2000], [4000, 2000], [4000, 4000], [2000, 4000]]
+
+    - name: 禁入区B
+      type: forbidden
+      polygon: [[6000, 6000], [8000, 6000], [8000, 8000], [6000, 8000]]
+
+simulation:
+  # 仿真频率（Hz）
+  tick_rate: 10
+  # 最大仿真时长（秒）
+  max_duration: 3600
+  # 是否启用可视化
+  enable_visualization: true
+  # 日志级别: debug, info, warn, error
+  log_level: info
+
+# 环境参数
+environment:
+  # 海况等级（0-9）
+  sea_state: 2
+  # 风速（m/s）
+  wind_speed: 5
+  # 风向（度）
+  wind_direction: 0
+  # 能见度（米）
+  visibility: 5000

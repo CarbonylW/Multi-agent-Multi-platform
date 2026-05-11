@@ -1,0 +1,41 @@
+# 场景2：故障恢复场景
+name: 故障恢复场景
+description: 跟踪过程中发生设备故障，测试系统的自适应重规划和故障转移能力
+
+# 入侵者定义
+intruders:
+  - id: intruder-001
+    type: uav
+    name: 可疑无人机
+    initial_position: [2000, 8000, 300]
+    velocity: [0, -5.0, 0]
+
+# 故障注入
+failures:
+  - time: 300  # 第5分钟
+    device: uav-001
+    type: communication_loss
+    description: 无人机1通信中断
+
+  - time: 600  # 第10分钟
+    device: usv-001
+    type: engine_failure
+    description: 无人艇1引擎故障，速度降为0
+
+  - time: 900  # 第15分钟
+    device: uuv-001
+    type: sensor_failure
+    description: 潜航器1传感器故障
+
+# 任务定义
+mission:
+  type: continuous_tracking
+  description: 持续跟踪目标，即使发生设备故障也要保持跟踪
+
+  success_criteria:
+    - 90%以上时间保持对目标的跟踪
+    - 故障发生后30秒内启动重规划
+    - 无次生事故发生
+
+# 仿真时长
+duration: 1800  # 30分钟

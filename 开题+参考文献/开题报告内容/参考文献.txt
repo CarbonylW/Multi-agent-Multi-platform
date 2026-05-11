@@ -1,0 +1,46 @@
+[1]刘禄, 张晓萌, 崔智昱, 等. 异构海洋无人集群敏捷协同技术创新及应用验证：架构、方法与控制器[J]. 中国舰船研究, 2026, 21(1): 321-337.
+[2]张婷婷, 邓志良, 刘云平, 等. 海上跨平台无人系统机动组网与智能控制技术[J]. 无线电工程, 2024, 54(2): 239-248.
+[3]Gao C, Lan X, Li N, et al. Large language models empowered agent-based modeling and simulation: A survey and perspectives[J]. Humanities and Social Sciences Communications, 2024, 11(1): 1-24.
+[4]Wang L, Ma C, Feng X, et al. A survey on large language model based autonomous agents[J/OL]. arXiv:2308.11432, 2023.
+[5]Li P, An Z, Abrar S, et al. Large language models for multi-robot systems: A survey[J/OL]. arXiv:2502.03814, 2025.
+[6]OpenAI. GPT-4 technical report[J/OL]. arXiv:2303.08774, 2023.
+[7]Ahn M, Brohan A, Brown N, et al. Do as I can, not as I say: Grounding language in robotic affordances[J/OL]. arXiv:2204.01691, 2022.
+[8]Zitkovich B, Yu T, Xu S, et al. RT-2: Vision-language-action models transfer web knowledge to robotic control[C]//Proceedings of The 7th Conference on Robot Learning. PMLR, 2023, 229: 2165-2183.
+[9]Liu B, Jiang Y, Zhang X, et al. LLM+P: Empowering large language models with optimal planning proficiency[J/OL]. arXiv:2304.11477, 2023.
+[10]Wang G, Xie Y, Jiang Y, et al. Voyager: An open-ended embodied agent with large language models[J/OL]. arXiv:2305.16291, 2023.
+[11]Shinn N, Cassano F, Berman E, et al. Reflexion: Language agents with verbal reinforcement learning[C/OL]//NeurIPS. 2023. arXiv:2303.11366.
+[12]Yao S, Zhao J, Yu D, et al. ReAct: Synergizing reasoning and acting in language models[C/OL]//ICLR. 2023. arXiv:2210.03629.
+[13]Lewis P, Perez E, Piktus A, et al. Retrieval-augmented generation for knowledge-intensive NLP tasks[C]//Advances in Neural Information Processing Systems. 2020, 33: 9459-9474.
+[14]Gao Y, Xiong Y, Gao X, et al. Retrieval-augmented generation for large language models: A survey[J/OL]. arXiv:2312.10997, 2023.
+[15]Izacard G, Grave E. Leveraging passage retrieval with generative models for open domain question answering[C]//Proceedings of the 16th Conference of the European Chapter of the Association for Computational Linguistics. 2021: 874-880.
+[16]Ram O, Levine Y, Dalmedigos I, et al. In-context retrieval-augmented language models[J]. Transactions of the Association for Computational Linguistics, 2023, 11: 1316-1331.
+[17]Mialon G, Dessì R, Lomeli M, et al. Augmented language models: A survey[J]. Transactions on Machine Learning Research, 2023.
+[18]Zhang K, Yang Z, Başar T. Multi-agent reinforcement learning: A selective overview of theories and algorithms[M]//Reinforcement Learning and Control. Cham: Springer, 2021: 321-384.
+[19]Papoudakis G, Christianos F, Schäfer L, et al. Benchmarking multi-agent deep reinforcement learning algorithms in cooperative tasks[C]//Proceedings of the Neural Information Processing Systems Track on Datasets and Benchmarks. 2021.
+[20]Lowe R, Wu Y, Tamar A, et al. Multi-agent actor-critic for mixed cooperative-competitive environments[C]//Advances in Neural Information Processing Systems. 2017, 30.
+[21]Gronauer S, Diepold K. Multi-agent deep reinforcement learning: A survey[J]. Artificial Intelligence Review, 2022, 55(2): 895-943.
+[22]Nguyen T T, Nguyen N D, Nahavandi S. Deep reinforcement learning for multi-agent systems: A review of challenges, solutions and applications[J]. IEEE Transactions on Cybernetics, 2023, 53(2): 860-878.
+[23]Gielis J, Shankar A, Prorok A. A critical review of communications in multi-robot systems[J]. Current Robotics Reports, 2022, 3: 213-225.
+[24]Zhu C, Dastani M, Wang S. A survey of multi-agent deep reinforcement learning with communication[J]. Autonomous Agents and Multi-Agent Systems, 2024, 38(1): Article 4.
+[25]Kampik T, Mansour A, Boissier O, et al. Governance of autonomous agents on the Web: Challenges and opportunities[J]. ACM Transactions on Internet Technology, 2022, 22(4): Article 104.
+[26]He F, Zhu T, Ye D, et al. The emerged security and privacy of LLM agent: A survey with case studies[J]. ACM Computing Surveys, 2025, 58(6).
+[27]South T, Marro S, Hardjono T, et al. Authenticated delegation and authorized AI agents[J/OL]. arXiv:2501.09674, 2025.
+[28]Piccialli F, Chiaro D, Sarwar S, et al. AgentAI: A comprehensive survey on autonomous agents in distributed AI for industry 4.0[J]. Expert Systems with Applications, 2025, 291: 128404.
+[29]刘起东, 吴怡霖, 张仕林, 等. 基于大小模型协同的无人艇集群自主协作算法研究[J/OL]. 中国舰船研究, 2026.
+[30]叶云, 邓宁. 基于大语言模型的无人机蜂群弱交互协同决策方法[J]. 火力与指挥控制, 2025, 50(12): 86-91.
+[31]杨植丹, 乔煜焜, 宋明峰, 等. 基于提示工程的无人艇集群大语言模型决策架构[J/OL]. 中国舰船研究, 2026.
+[32]李婷婷, 王琪, 王嘉康, 等. SWARM-LLM: 基于大语言模型的无人集群任务规划系统[J]. 计算机科学, 2025, 52(1): 72-79.
+[33]Pei D, He J, Liu K, et al. Application of large language models and assessment of their ship-handling theory knowledge and skills for connected maritime autonomous surface ships[J]. Mathematics, 2024, 12(15): 2381.
+[34]岳国靖, 张新宇, 郑康洁, 等. 增强大语言模型驱动的交汇水域多船协同避碰决策[J]. 中国舰船研究, 2025, 20(6): 38-52.
+[35]史岳橙, 焦锐阳, 吕沐, 等. 大模型驱动的USV集群自适应路径规划方法[J]. 中国舰船研究, 2025, 20(6): 28-37.
+[36]杨明哲, 潘鹿鹿, 王鹏, 等. 大模型赋能的无人艇集群区域覆盖实时决策方法[J]. 中国舰船研究, 2025, 20(6): 67-76.
+[37]Bui H D, Sujit P B, Behera L, et al. A survey of multi-robot motion planning[J/OL]. arXiv:2310.08599, 2023.
+[38]Zhao J, Yan Z, Zhou Z Z, et al. A ship trajectory prediction method based on GAT and LSTM[J]. Ocean Engineering, 2023, 289: 116159.
+[39]Xu X, Lu Y, Liu X, et al. Intelligent collision avoidance algorithms for USVs via deep reinforcement learning under COLREGs[J]. Ocean Engineering, 2020, 217: 107704.
+[40]Wang Y, Xu H, Feng H, et al. Deep reinforcement learning based collision avoidance system for autonomous ships[J]. Ocean Engineering, 2024, 292: 116527.
+[41]Yang X, Han Q. Improved DQN for dynamic obstacle avoidance and ship path planning[J]. Algorithms, 2023, 16(5): 220.
+[42]Lee H T, Kim M K. Optimal path planning for a ship in coastal waters with deep Q network[J]. Ocean Engineering, 2024, 307: 118193.
+[43]徐航. 基于深度强化学习的多AUV分布式协同目标搜索[D]. 南京: 东南大学, 2022.
+[44]张超. 基于深度强化学习的多智能体协同决策研究[D]. 北京: 北京邮电大学, 2025.
+[45]李超超, 邵文龙, 吕培, 等. 人机协同决策的异质多智能体路径规划[J/OL]. 计算机辅助设计与图形学学报, 2026.
+[46]李泽方, 刘忠, 张建强, 等. 基于MAS的多USV编队分布式协调控制方法[J]. 电光与控制, 2020, 27(6): 22-26,104.

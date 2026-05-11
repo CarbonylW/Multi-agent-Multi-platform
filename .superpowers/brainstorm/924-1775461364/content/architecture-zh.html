@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>多智能体协同作战系统架构</title>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Microsoft YaHei', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #fff;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        h1 {
+            text-align: center;
+            color: #00d4ff;
+            margin-bottom: 10px;
+            font-size: 2rem;
+        }
+        .subtitle {
+            text-align: center;
+            color: #8892b0;
+            margin-bottom: 30px;
+            font-size: 1rem;
+        }
+        .mermaid {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+        .section {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 20px;
+            backdrop-filter: blur(10px);
+        }
+        .section h2 {
+            color: #00d4ff;
+            margin-top: 0;
+            font-size: 1.3rem;
+        }
+        .section ul {
+            color: #ccd6f6;
+            line-height: 1.8;
+        }
+        .tech-stack {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .tech-card {
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(0, 119, 255, 0.1) 100%);
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            border-radius: 8px;
+            padding: 20px;
+        }
+        .tech-card h3 {
+            color: #00d4ff;
+            margin-top: 0;
+        }
+        .tech-card ul {
+            color: #8892b0;
+            margin: 0;
+        }
+        .comm-arrow {
+            color: #4ade80;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🤖 多智能体协同作战系统架构</h1>
+        <p class="subtitle">大模型驱动的多层多Agent异构无人平台协同控制与任务调度系统</p>
+
+        <div class="mermaid">
+graph TD
+    %% 样式定义
+    classDef l1 fill:#ff6b6b,stroke:#fff,stroke-width:3px,color:#fff,font-weight:bold;
+    classDef l2 fill:#4ecdc4,stroke:#fff,stroke-width:2px,color:#fff,font-weight:bold;
+    classDef device fill:#45b7d1,stroke:#fff,stroke-width:2px,color:#fff;
+    classDef data fill:#96ceb4,stroke:#fff,stroke-width:2px,color:#333;
+
+    subgraph L1["第一层：顶层全局作战管理Agent（岸基服务器）"]
+        C2[👑 全局统筹Agent]
+        LLM[大模型推理模块<br/>LLM]
+        RAG[(作战知识库<br/>RAG)]
+        TRAD[传统规划算法<br/>路径规划/任务分配]
+        MERGE[决策融合模块]
+    end
+
+    subgraph L2["第二层：设备类型Agent（岸基服务器）"]
+        A1[🛩️ 无人机集群Agent<br/>UAV Agent]
+        A2[🚤 无人艇Agent<br/>USV Agent]
+        A3[🤿 无人潜航器Agent<br/>UUV Agent]
+    end
+
+    subgraph L3["第三层：实际物理设备"]
+        D1_1[无人机1]
+        D1_2[无人机2]
+        D1_3[无人机3]
+
+        D2_1[无人艇1]
+        D2_2[无人艇2]
+
+        D3_1[潜航器1]
+        D3_2[潜航器2]
+    end
+
+    subgraph Comm["通信规则（严格层级）"]
+        R1[✅ L1 ↔ L2 双向通信]
+        R2[✅ L2 ↔ 对应设备 双向通信]
+        R3[❌ L1 不能直接控制设备]
+        R4[❌ L2 之间不能直接通信]
+        R5[✅ 设备状态同时上报 L1+L2]
+    end
+
+    %% 连接关系
+    C2 --> LLM
+    C2 --> RAG
+    C2 --> TRAD
+    LLM --> MERGE
+    TRAD --> MERGE
+    MERGE --> C2
+
+    C2 -->|作战规划/任务指令| A1
+    C2 -->|作战规划/任务指令| A2
+    C2 -->|作战规划/任务指令| A3
+
+    A1 -->|协议报文/操控指令| D1_1
+    A1 -->|协议报文/操控指令| D1_2
+    A1 -->|协议报文/操控指令| D1_3
+
+    A2 -->|协议报文/操控指令| D2_1
+    A2 -->|协议报文/操控指令| D2_2
+
+    A3 -->|协议报文/操控指令| D3_1
+    A3 -->|协议报文/操控指令| D3_2
+
+    D1_1 -.->|状态上报| C2
+    D1_2 -.->|状态上报| C2
+    D1_3 -.->|状态上报| C2
+    D2_1 -.->|状态上报| C2
+    D2_2 -.->|状态上报| C2
+    D3_1 -.->|状态上报| C2
+    D3_2 -.->|状态上报| C2
+
+    D1_1 -.->|状态上报| A1
+    D1_2 -.->|状态上报| A1
+    D1_3 -.->|状态上报| A1
+    D2_1 -.->|状态上报| A2
+    D2_2 -.->|状态上报| A2
+    D3_1 -.->|状态上报| A3
+    D3_2 -.->|状态上报| A3
+
+    %% 样式应用
+    class C2,LLM,RAG,TRAD,MERGE l1;
+    class A1,A2,A3 l2;
+    class D1_1,D1_2,D1_3,D2_1,D2_2,D3_1,D3_2 device;
+    class R1,R2,R3,R4,R5 data;
+        </div>
+
+        <div class="section">
+            <h2>🏗️ 技术栈选型</h2>
+            <div class="tech-stack">
+                <div class="tech-card">
+                    <h3>🐍 Python - LLM层</h3>
+                    <ul>
+                        <li>大模型调用与推理</li>
+                        <li>RAG知识库检索</li>
+                        <li>Prompt Engineering</li>
+                    </ul>
+                </div>
+                <div class="tech-card">
+                    <h3>Go - 后端核心</h3>
+                    <ul>
+                        <li>Agent调度与通信</li>
+                        <li>传统规划算法</li>
+                        <li>冲突检测与消解</li>
+                        <li>仿真引擎</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🎯 四大核心问题对应解决方案</h2>
+            <ul>
+                <li><strong>问题1：智能性 vs 实时性</strong> → L1采用混合架构，大模型做态势理解，传统算法做规划调度</li>
+                <li><strong>问题2：三维空间冲突检测</strong> → L1做全局仲裁，统一检测各设备航线冲突</li>
+                <li><strong>问题3：多Agent角色混淆</strong> → 严格层级通信 + 指令签名权限校验</li>
+                <li><strong>问题4：鲁棒性与可扩展性</strong> → 设备状态双上报，L1实时监控故障并重规划</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>📋 典型作战流程示例</h2>
+            <ol style="color: #ccd6f6; line-height: 2;">
+                <li><strong>态势感知</strong>：雷达/传感器发现可疑入侵者，获取大致方位</li>
+                <li><strong>顶层决策</strong>：L1 Agent理解态势，从知识库检索预案，决定派遣多设备协同</li>
+                <li><strong>任务分解</strong>：L1向无人机Agent、无人艇Agent分别下达作战规划</li>
+                <li><strong>具体执行</strong>：各设备Agent规划具体航线，下发操控指令给设备</li>
+                <li><strong>协同作业</strong>：无人机高空搜索、无人艇水面跟踪、潜航器水下警戒</li>
+                <li><strong>状态反馈</strong>：设备实时上报状态给L1和L2</li>
+                <li><strong>任务完成</strong>：成功驱赶入侵者，系统进入警戒状态</li>
+            </ol>
+        </div>
+    </div>
+
+    <script>
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'default',
+            flowchart: {
+                useMaxWidth: true,
+                htmlLabels: true,
+                curve: 'basis'
+            }
+        });
+    </script>
+</body>
+</html>

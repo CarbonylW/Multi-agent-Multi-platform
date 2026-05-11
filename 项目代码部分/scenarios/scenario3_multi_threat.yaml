@@ -1,0 +1,46 @@
+# 场景3：多目标复杂协同场景
+name: 多目标复杂协同场景
+description: 海空潜多个目标同时入侵，测试系统的多任务分配和协同能力
+
+# 入侵者定义（多个目标）
+intruders:
+  - id: intruder-air
+    type: uav
+    name: 空中目标
+    initial_position: [1000, 9000, 400]
+    velocity: [0, -4.0, 0]
+
+  - id: intruder-surface
+    type: surface_ship
+    name: 水面目标
+    initial_position: [9000, 1000, 0]
+    velocity: [-4.0, 0, 0]
+
+  - id: intruder-underwater
+    type: uuv
+    name: 水下目标
+    initial_position: [8000, 8000, -150]
+    velocity: [-2.0, -2.0, 0]
+
+# 任务定义
+mission:
+  type: multi_threat_response
+  description: 同时应对多个方向的入侵目标
+
+  priorities:
+    - 空中目标优先级：高
+    - 水面目标优先级：中
+    - 水下目标优先级：高
+
+  objectives:
+    - 同时跟踪所有目标
+    - 阻止目标进入敏感区域
+    - 合理分配设备资源
+
+  success_criteria:
+    - 所有目标均被持续跟踪
+    - 无目标进入禁入区
+    - 设备利用率 > 60%
+
+# 仿真时长
+duration: 2400  # 40分钟
