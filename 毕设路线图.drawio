@@ -1,0 +1,112 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="v2架构2.0" id="BNn4pbmGtRDG0_aprmiF">
+    <mxGraphModel dx="1603" dy="1083" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="u3fsys7vba0yMF1S_xIi-23" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;" value="🖥️ Web 前端&#xa;three.js + WebSocket" vertex="1">
+          <mxGeometry height="50" width="220" x="10" y="440" as="geometry" />
+        </mxCell>
+        <mxCell id="u3fsys7vba0yMF1S_xIi-24" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;align=left;verticalAlign=top;spacingTop=10;spacingLeft=10;" value="📋 黑板 / SA Agent（独立进程）&#xa;&#xa;· 全局态势存储 · 按需查询（不推送）&#xa;· 事件总线：敌现/丢失/围捕成功/agent故障&#xa;· 多源态势：雷达扫描点 / 设备跟踪点&#xa;  （双状态 · 不同可信度）&#xa;· Sensor Fusion 时间窗口加权" vertex="1">
+          <mxGeometry height="180" width="270" x="300" y="375" as="geometry" />
+        </mxCell>
+        <mxCell id="u3fsys7vba0yMF1S_xIi-25" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999999;verticalAlign=top;fontStyle=1;fontSize=12;dashed=0;" value="指挥决策层（A2A 互通，本系统核心）" vertex="1">
+          <mxGeometry height="320" width="610" x="693" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="u3fsys7vba0yMF1S_xIi-26" parent="u3fsys7vba0yMF1S_xIi-25" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" value="🎯 L1 顶层统筹 Agent&#xa;战略任务 / 调配 / RAG" vertex="1">
+          <mxGeometry height="70" width="250" x="180" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="u3fsys7vba0yMF1S_xIi-27" parent="u3fsys7vba0yMF1S_xIi-25" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#eef3fb;strokeColor=#6c8ebf;verticalAlign=top;fontStyle=1;fontSize=11;" value="🛠️ 中层 兵种 Agent ×3（彼此 A2A 互通；故障 → Bully 选举临时 leader）" vertex="1">
+          <mxGeometry height="140" width="550" x="30" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="u3fsys7vba0yMF1S_xIi-28" parent="u3fsys7vba0yMF1S_xIi-27" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" value="UAV-Agent" vertex="1">
+          <mxGeometry height="70" width="150" x="20" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="u3fsys7vba0yMF1S_xIi-29" parent="u3fsys7vba0yMF1S_xIi-27" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" value="USV-Agent&#xa;（管雷达扫描）" vertex="1">
+          <mxGeometry height="70" width="150" x="195" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="u3fsys7vba0yMF1S_xIi-30" parent="u3fsys7vba0yMF1S_xIi-27" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" value="UUV-Agent" vertex="1">
+          <mxGeometry height="70" width="150" x="370" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="u3fsys7vba0yMF1S_xIi-31" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=12;" value="👾 敌方模拟器（独立进程）&#xa;随机游走 + 战术意图&#xa;突发/未知/不可预见&#xa;※ 不在 A2A 指挥网内" vertex="1">
+          <mxGeometry height="100" width="220" x="773" y="910" as="geometry" />
+        </mxCell>
+        <mxCell id="u3fsys7vba0yMF1S_xIi-32" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=11;" value="⚙️ 统一模型工厂 ModelFactory&#xa;（全系统唯一模型入口，零判断）&#xa;当前：云端API(调试) / 本地模型(部署证明)&#xa;未来：迁机房高算力服务器" vertex="1">
+          <mxGeometry height="120" width="220" x="1380" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="u3fsys7vba0yMF1S_xIi-33" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;fontStyle=1;" value="🔌 DeviceDriver 端口-适配器（L2↔设备统一抽象，语义对齐 MAVLink）" vertex="1">
+          <mxGeometry height="55" width="610" x="693" y="520" as="geometry" />
+        </mxCell>
+        <mxCell id="u3fsys7vba0yMF1S_xIi-34" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#82b366;verticalAlign=top;fontStyle=1;fontSize=12;" value="当前：仿真（已实现）" vertex="1">
+          <mxGeometry height="215" width="380" x="693" y="625" as="geometry" />
+        </mxCell>
+        <mxCell id="u3fsys7vba0yMF1S_xIi-35" parent="u3fsys7vba0yMF1S_xIi-34" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;" value="SimDriver" vertex="1">
+          <mxGeometry height="45" width="150" x="115" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="u3fsys7vba0yMF1S_xIi-36" parent="u3fsys7vba0yMF1S_xIi-34" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;" value="🌐 仿真 World（物理 100Hz tick）&#xa;我方 UAV/USV/UUV：自主避碰VO + 可行域&#xa;+ 休眠备用脑（故障当临时leader才激活）&#xa;敌方设备：被探测对象" vertex="1">
+          <mxGeometry height="90" width="340" x="20" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="u3fsys7vba0yMF1S_xIi-37" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fafafa;strokeColor=#999999;dashed=1;verticalAlign=top;fontStyle=1;fontSize=12;fontColor=#777777;" value="未来：真实硬件（零改上层 · stub 预留）" vertex="1">
+          <mxGeometry height="215" width="450" x="1103" y="625" as="geometry" />
+        </mxCell>
+        <mxCell id="u3fsys7vba0yMF1S_xIi-38" parent="u3fsys7vba0yMF1S_xIi-37" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f0f0f0;strokeColor=#999999;dashed=1;fontColor=#777777;fontSize=12;" value="MavlinkDriver / ROSDriver" vertex="1">
+          <mxGeometry height="45" width="210" x="120" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="u3fsys7vba0yMF1S_xIi-39" parent="u3fsys7vba0yMF1S_xIi-37" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f0f0f0;strokeColor=#999999;dashed=1;fontColor=#777777;fontSize=11;" value="🚁 真实无人机 · 🚤 无人艇 · 🛥️ 无人潜航器&#xa;（接入真实硬件，MAVLink/ROS2）" vertex="1">
+          <mxGeometry height="80" width="410" x="20" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="u3fsys7vba0yMF1S_xIi-40" edge="1" parent="1" source="u3fsys7vba0yMF1S_xIi-23" style="endArrow=classic;startArrow=classic;html=1;fontSize=11;" target="u3fsys7vba0yMF1S_xIi-24" value="WebSocket">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="u3fsys7vba0yMF1S_xIi-41" edge="1" parent="1" source="u3fsys7vba0yMF1S_xIi-26" style="endArrow=classic;startArrow=classic;html=1;strokeColor=#d79b00;strokeWidth=2.5;fontSize=11;fontColor=#995500;" target="u3fsys7vba0yMF1S_xIi-27" value="A2A 下发任务 / 上报">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="u3fsys7vba0yMF1S_xIi-42" edge="1" parent="1" source="u3fsys7vba0yMF1S_xIi-26" style="endArrow=classic;html=1;dashed=1;strokeColor=#82b366;fontSize=11;entryX=0.997;entryY=0.209;entryDx=0;entryDy=0;entryPerimeter=0;" target="u3fsys7vba0yMF1S_xIi-24" value="查询/订阅">
+          <mxGeometry relative="1" x="0.0601" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="680" y="280" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="u3fsys7vba0yMF1S_xIi-43" edge="1" parent="1" source="u3fsys7vba0yMF1S_xIi-27" style="endArrow=classic;html=1;dashed=1;strokeColor=#82b366;fontSize=11;entryX=0.986;entryY=0.421;entryDx=0;entryDy=0;entryPerimeter=0;" target="u3fsys7vba0yMF1S_xIi-24" value="查询/订阅">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="590" y="400" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="u3fsys7vba0yMF1S_xIi-44" edge="1" parent="1" source="u3fsys7vba0yMF1S_xIi-27" style="endArrow=classic;html=1;fontSize=11;" target="u3fsys7vba0yMF1S_xIi-33" value="任务(目标/角色/速度矢量)">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="u3fsys7vba0yMF1S_xIi-45" edge="1" parent="1" source="u3fsys7vba0yMF1S_xIi-33" style="endArrow=classic;html=1;strokeWidth=2;fontSize=11;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="u3fsys7vba0yMF1S_xIi-34" value="当前">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="u3fsys7vba0yMF1S_xIi-46" edge="1" parent="1" source="u3fsys7vba0yMF1S_xIi-35" style="endArrow=classic;html=1;" target="u3fsys7vba0yMF1S_xIi-36">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="u3fsys7vba0yMF1S_xIi-47" edge="1" parent="1" source="u3fsys7vba0yMF1S_xIi-33" style="endArrow=classic;html=1;dashed=1;strokeColor=#999999;fontColor=#777777;fontSize=11;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="u3fsys7vba0yMF1S_xIi-37" value="未来可插拔">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="u3fsys7vba0yMF1S_xIi-48" edge="1" parent="1" source="u3fsys7vba0yMF1S_xIi-38" style="endArrow=classic;html=1;dashed=1;strokeColor=#999999;" target="u3fsys7vba0yMF1S_xIi-39">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="u3fsys7vba0yMF1S_xIi-49" edge="1" parent="1" source="u3fsys7vba0yMF1S_xIi-36" style="endArrow=classic;html=1;dashed=1;strokeColor=#82b366;fontSize=11;entryX=1;entryY=0.75;entryDx=0;entryDy=0;" target="u3fsys7vba0yMF1S_xIi-24" value="感知上报(雷达/跟踪)">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="580" y="720" />
+            </Array>
+            <mxPoint x="582" y="780" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="u3fsys7vba0yMF1S_xIi-50" edge="1" parent="1" source="u3fsys7vba0yMF1S_xIi-31" style="endArrow=classic;html=1;strokeColor=#b85450;fontSize=11;fontColor=#a33;" target="u3fsys7vba0yMF1S_xIi-36" value="注入敌方真值">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="u3fsys7vba0yMF1S_xIi-51" edge="1" parent="1" source="u3fsys7vba0yMF1S_xIi-26" style="endArrow=classic;html=1;dashed=1;strokeColor=#d79b00;fontSize=10;" target="u3fsys7vba0yMF1S_xIi-32" value="chat/embed">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="u3fsys7vba0yMF1S_xIi-52" edge="1" parent="1" source="u3fsys7vba0yMF1S_xIi-27" style="endArrow=classic;html=1;dashed=1;strokeColor=#d79b00;fontSize=10;" target="u3fsys7vba0yMF1S_xIi-32" value="chat/embed">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
